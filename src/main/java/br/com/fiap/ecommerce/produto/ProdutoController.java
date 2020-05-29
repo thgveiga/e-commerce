@@ -30,7 +30,7 @@ public class ProdutoController {
 	}
 
 	@GetMapping("/{id}")
-	public ResponseEntity<Produto> findA(@PathVariable Long id) {
+	public ResponseEntity<Produto> find(@PathVariable Long id) {
 		return ResponseEntity.ok(produtoService.find(id));
 	}
 	
