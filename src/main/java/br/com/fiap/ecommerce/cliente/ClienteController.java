@@ -44,7 +44,7 @@ public class ClienteController {
 		try {
 			return ResponseEntity.ok(clienteService.update(id, cliente));	
 		} catch (Exception e) {
-			log.error(String.format("nao foi possivel atualizar o produto %d com valores: %s", id, cliente));
+			log.error(String.format("nao foi possivel atualizar o cliente %d com valores: %s", id, cliente));
 	        return ResponseEntity.badRequest().build();
 		}
 		
@@ -56,7 +56,7 @@ public class ClienteController {
 		try {
 			return ResponseEntity.ok(clienteService.deleteById(id));	
 		} catch (Exception e) {
-			log.error(String.format("nao foi possivel deletar o produto %d ", id));
+			log.error(String.format("nao foi possivel deletar o cliente %d ", id));
 	        return ResponseEntity.badRequest().build();
 		}
 	}

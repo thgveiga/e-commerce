@@ -21,6 +21,7 @@ public class ProdutoService {
 		return produtoRepository.findAll();
 	}
 
+    @Cacheable(cacheNames = "Produto", key = "#produto.find")
     public Produto find(Long id) {
     	Optional<Produto> optional = produtoRepository.findById(id);
     	

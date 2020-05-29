@@ -20,6 +20,7 @@ public class ClienteService {
 		return clienteRepository.findAll();
 	}
 
+	@Cacheable(cacheNames = "Cliente", key = "#cliente.find")
 	public Cliente find(Long id) {
 		Optional<Cliente> optional = clienteRepository.findById(id);
 
