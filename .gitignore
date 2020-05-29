@@ -53,4 +53,9 @@ build/
 ### VS Code ###
 .vscode/
 
+### git ###
 *.orig
+
+### others ###
+~$commerce.docx
+
