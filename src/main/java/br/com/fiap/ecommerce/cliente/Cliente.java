@@ -22,10 +22,18 @@ public class Cliente implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
+	@Entity
 	@Data
 	@NoArgsConstructor
 	@ToString
-    class Endereco {
+    public class Endereco implements Serializable {
+
+    	private static final long serialVersionUID = 1L;
+
+		@Id
+		@GeneratedValue(strategy = GenerationType.IDENTITY)
+		private Long id;
+		
 		private String rua;
 		private Integer numero;
 		private String cep;
@@ -42,7 +50,7 @@ public class Cliente implements Serializable {
 	private String   telefone;
 	
 	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	private Endereco enderecoEntrega;
+	private Cliente.Endereco enderecoEntrega;
 	
 	
 }
