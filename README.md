@@ -67,9 +67,10 @@ user : admin
 password : ''
 ```
 
-## MySql
+## PostgreSql
 ```
-url : http://localhost:3306
-user : admin
-password : ''
+url: http://127.0.0.1:49878/browser/
+username=postgres
+password=admin
+
 ```
