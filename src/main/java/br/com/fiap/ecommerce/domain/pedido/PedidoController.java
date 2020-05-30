@@ -1,4 +1,4 @@
-package br.com.fiap.ecommerce.pedido;
+package br.com.fiap.ecommerce.domain.pedido;
 
 import java.util.Collection;
 
@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.fiap.ecommerce.pedido.Pedido;
+import br.com.fiap.ecommerce.domain.pedido.Pedido;
 import lombok.extern.slf4j.Slf4j;
 
 @RestController

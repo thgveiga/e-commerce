@@ -1,4 +1,4 @@
-package br.com.fiap.ecommerce.pedido;
+package br.com.fiap.ecommerce.domain.pedido;
 
 import java.util.Collection;
 import java.util.Optional;

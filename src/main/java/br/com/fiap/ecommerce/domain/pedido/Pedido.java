@@ -1,6 +1,7 @@
-package br.com.fiap.ecommerce.cliente;
+package br.com.fiap.ecommerce.domain.pedido;
 
 import java.io.Serializable;
+import java.util.Collection;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -8,8 +9,11 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
+import br.com.fiap.ecommerce.domain.cliente.Cliente;
+import br.com.fiap.ecommerce.domain.produto.Produto;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
@@ -18,39 +22,17 @@ import lombok.ToString;
 @Data
 @NoArgsConstructor
 @ToString
-public class Cliente implements Serializable {
+public class Pedido implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-
-	@Entity
-	@Data
-	@NoArgsConstructor
-	@ToString
-    public class Endereco implements Serializable {
-
-    	private static final long serialVersionUID = 1L;
-
-		@Id
-		@GeneratedValue(strategy = GenerationType.IDENTITY)
-		private Long id;
-		
-		private String rua;
-		private Integer numero;
-		private String cep;
-		private String bairro;
-		private String cidade;
-	}
-
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	private String   nome;
-	private Integer  idade;
-	private String   telefone;
-	
 	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	private Cliente.Endereco enderecoEntrega;
+	private Cliente cliente;
 	
-	
+	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	private Collection<Produto> produtos;
 }

@@ -1,4 +1,4 @@
-package br.com.fiap.ecommerce.produto;
+package br.com.fiap.ecommerce.domain.produto;
 
 import java.util.Collection;
 

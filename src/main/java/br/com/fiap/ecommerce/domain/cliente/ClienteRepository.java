@@ -1,9 +1,9 @@
-package br.com.fiap.ecommerce.pedido;
+package br.com.fiap.ecommerce.domain.cliente;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface PedidoRepository  extends JpaRepository<Pedido, Long>{
+public interface ClienteRepository extends JpaRepository<Cliente, Long> {
 
 }
